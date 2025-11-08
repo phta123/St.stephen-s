@@ -1,0 +1,606 @@
+/* General Styles */
+body {
+    margin: 0; /* Removes default body margin */
+    background-color: #0b0c10; /* Sets background color to a dark blue/black */
+    height: 100vh; /* Sets body height to 100% of the viewport height */
+    width: 100vw; /* Sets body width to 100% of the viewport width */
+    position: relative; /* Establishes a positioning context for child elements */
+    color: white; /* Sets default text color to white */
+    font-family: sans-serif; /* Sets default font to a sans-serif font */
+}
+
+html {
+    overflow: auto; /* Allows scrolling on the html element */
+    height: 100%; /* Sets html height to 100% */
+}
+
+.container {
+    height: 100vh; /* Sets container height to 100% of the viewport height */
+    overflow-y: scroll; /* Allows vertical scrolling within the container */
+    scroll-snap-type: y mandatory; /* Enforces scroll snapping on the y-axis */
+}
+
+section {
+    scroll-snap-align: start; /* Aligns sections to the start of the viewport when scrolling */
+    height: 100vh; /* Sets section height to 100% of the viewport height */
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Ortica Linear'; /* Defines a custom font family */
+    src: url('fonts/OrticaLinear-Regular.woff2') format('woff2'); /* Specifies the font file and format */
+    font-weight: normal; /* Sets the font weight to normal */
+    font-style: normal; /* Sets the font style to normal */
+}
+
+@font-face {
+    font-family: 'Ronzino Bold'; /* Defines a custom font family */
+    src: url('fonts/Ronzino-Bold.woff2') format('woff2'); /* Specifies the font file and format */
+    font-weight: bold; /* Sets the font weight to bold */
+    font-style: normal; /* Sets the font style to normal */
+}
+
+/* Header */
+#main-header {
+    position: absolute; /* Positions the header relative to the nearest positioned ancestor */
+    top: 0; /* Aligns the header to the top of the page */
+    left: 0; /* Aligns the header to the left of the page */
+    width: 100%; /* Sets the header width to 100% */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    z-index: 1000; /* Sets the stack order of the header to be on top of other elements */
+    display: flex; /* Enables flexbox layout for the header */
+    justify-content: flex-start; /* Aligns flex items to the start of the container */
+    align-items: flex-start; /* Aligns flex items to the start of the container */
+}
+
+#header-logo {
+    height: 140px; /* Sets the height of the logo */
+    margin-right: 20px; /* Adds a margin to the right of the logo */
+    margin-left: 0; /* Adds a margin to the left of the logo */
+    margin-top: -20px; /* Adds a negative margin to the top of the logo */
+}
+
+
+
+#main-header nav {
+    padding: 20px; /* Adds padding to the navigation menu */
+    width: 80%; /* Sets the width of the navigation menu */
+}
+
+#main-header nav ul {
+    list-style: none; /* Removes the default list style */
+    padding: 0; /* Removes padding from the list */
+    margin: 0; /* Removes margin from the list */
+    display: flex; /* Enables flexbox layout for the list */
+    justify-content: space-between; /* Distributes flex items evenly with space between them */
+    gap: 10px; /* Adds a gap between flex items */
+}
+
+#main-header nav ul li a {
+    color: white; /* Sets the text color of the navigation links */
+    text-decoration: none; /* Removes the default underline from the links */
+    font-family: 'Ronzino Bold', sans-serif; /* Sets the font for the navigation links */
+    font-weight: bold; /* Sets the font weight to bold */
+    font-size: 1.4em; /* Sets the font size of the navigation links */
+    position: relative; /* Establishes a positioning context for child elements */
+}
+
+#main-header.header-masked nav ul li a {
+    background-image: url('image/3.png'); /* Sets a background image for the navigation links */
+    background-size: cover; /* Scales the background image to cover the entire element */
+    background-position: center; /* Centers the background image */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    background-clip: text; /* Clips the background to the text */
+    color: transparent; /* Makes the text color transparent */
+}
+
+/* Hero Section */
+#hero {
+    position: relative; /* Establishes a positioning context for child elements */
+    height: 100vh; /* Sets the hero section height to 100% of the viewport height */
+    width: 100%; /* Sets the hero section width to 100% */
+    display: flex; /* Enables flexbox layout for the hero section */
+    justify-content: center; /* Centers flex items horizontally */
+    align-items: center; /* Centers flex items vertically */
+    overflow: hidden; /* Hides any content that overflows the element's box */
+    padding-top: 50px; /* Adds padding to the top of the hero section */
+}
+
+#hero-background-video {
+    position: absolute; /* Positions the video relative to the nearest positioned ancestor */
+    top: 0; /* Aligns the video to the top of the hero section */
+    left: 0; /* Aligns the video to the left of the hero section */
+    width: 100%; /* Sets the video width to 100% */
+    height: 100%; /* Sets the video height to 100% */
+    object-fit: cover; /* Scales the video to cover the entire element */
+    z-index: -1; /* Sets the stack order of the video to be behind other elements */
+    opacity: 1; /* Makes the video visible */
+}
+
+#centered-text {
+    position: absolute; /* Positions the text relative to the nearest positioned ancestor */
+    top: 50%; /* Aligns the text to the vertical center */
+    left: 50%; /* Aligns the text to the horizontal center */
+    transform: translate(-50%, -50%); /* Centers the text precisely */
+    z-index: 10;
+    opacity: 0; /* Makes the text transparent */
+    transition: opacity 1s ease-in-out; /* Adds a fade transition effect to the opacity */
+    text-align: left;
+}
+
+#centered-text.fade-in {
+    opacity: 1 !important; /* Fades in the text by setting opacity to 1 */
+}
+
+.st,
+.stephens,
+.parish {
+    font-family: 'Ortica Linear', sans-serif; /* Sets the font for the text */
+    font-weight: 900; /* Sets the font weight to bold */
+    color: #ffb703; /* Sets the text color to a specific orange shade */
+    margin: 0; /* Removes margin from the text */
+    line-height: 1; /* Sets the line height of the text */
+    font-size: 7em; /* Sets the font size of the text */
+    display: block;
+    text-shadow: 0 0 1px #ffb703, 0 0 2px #ffb703, 0 0 3px #ffb703;
+}
+
+.location-container {
+    position: absolute;
+    bottom: -100px;
+    right: 0;
+    background-color: white;
+    color: #0b0c10;
+    padding: 10px;
+    border-radius: 10px;
+    mix-blend-mode: screen;
+}
+
+.location {
+    font-size: 1.5em; /* Sets the font size of the location text */
+    margin: 0; /* Removes margin from the location text */
+    font-family: 'Ortica Linear', sans-serif; /* Sets the font for the location text */
+    text-align: right; /* Aligns the location text to the right */
+    display: block; /* Makes the location text a block-level element */
+}
+
+.location-subtext {
+    font-size: 1em;
+    margin: 0;
+    font-family: 'Ortica Linear', sans-serif;
+    text-align: right;
+    display: block;
+}
+
+/* Content Section */
+#content {
+    height: 100vh; /* Sets the content section height to 100% of the viewport height */
+    display: flex; /* Enables flexbox layout for the content section */
+    justify-content: center; /* Centers flex items horizontally */
+    align-items: flex-end; /* Aligns flex items to the bottom of the container */
+    background-color: #FFFFFF; /* Sets the background color to white */
+    padding: 0 20px; /* Adds padding to the content section */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    position: relative; /* Establishes a positioning context for child elements */
+}
+
+.welcome-text {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: black;
+}
+
+.welcome-parish {
+    font-size: 8.28em;
+    font-family: 'Ronzino Bold', sans-serif;
+    line-height: 0.8;
+}
+
+.to-our {
+    font-size: 3.312em;
+    font-family: 'Ortica Linear', sans-serif;
+    margin: 0px 0;
+    line-height: 0.8;
+}
+
+.welcome-subtext {
+    font-size: 1.8em;
+    text-align: right;
+    margin-top: 60px;
+    max-width: 500px;
+    font-family: 'Ortica Linear', sans-serif;
+}
+
+.rectangles-container {
+    display: flex; /* Enables flexbox layout for the rectangles container */
+    justify-content: flex-start; /* Aligns flex items to the start of the container */
+    align-items: center; /* Centers flex items vertically */
+    width: 100%; /* Sets the width of the rectangles container to 100% */
+    margin-bottom: 50px; /* Adds a margin to the bottom of the rectangles container */
+}
+
+.expandable-rectangle {
+    flex-basis: 10%; /* Sets the initial width of the expandable rectangles */
+    flex-grow: 0; /* Prevents the rectangles from growing */
+    flex-shrink: 0; /* Prevents the rectangles from shrinking */
+    height: 600px; /* Sets the height of the expandable rectangles */
+    background-color: white; /* Sets the background color to white */
+    border-radius: 15px; /* Adds rounded corners to the rectangles */
+    margin: 0 10px; /* Adds a margin to the left and right of the rectangles */
+    display: flex; /* Enables flexbox layout for the rectangles */
+    align-items: center; /* Centers flex items vertically */
+    transition: flex-basis 1s ease; /* Adds a transition effect to the flex-basis property */
+    overflow: hidden; /* Hides any content that overflows the element's box */
+    position: relative; /* Establishes a positioning context for child elements */
+}
+
+.expandable-rectangle.closed {
+    background-color: #8F3F3C; /* Sets the background color of the closed rectangles */
+}
+
+.expandable-rectangle.closed .rect-image,
+.expandable-rectangle.closed .text-beside-image,
+.expandable-rectangle.closed .live-stream-button,
+.expandable-rectangle.closed .map-container {
+    display: none; /* Hides the image, text, and button when the rectangle is closed */
+}
+
+.expandable-rectangle.open {
+    flex-basis: 35%; /* Sets the width of the open rectangle */
+    height: 600px; /* Sets the height of the open rectangle */
+    background-color: white; /* Sets the background color to white */
+}
+
+.expandable-rectangle.open .rect-image,
+.expandable-rectangle.open .text-beside-image,
+.expandable-rectangle.open .live-stream-button {
+    display: block; /* Shows the image, text, and button when the rectangle is open */
+}
+
+.expandable-rectangle.open .vertical-text {
+    display: none; /* Hides the vertical text when the rectangle is open */
+}
+
+.rect-image {
+    height: calc(100% - 40px); /* Sets the height of the image inside the rectangle */
+    width: 250px; /* Sets the width of the image inside the rectangle */
+    margin: 20px; /* Adds a margin around the image */
+    border-radius: 10px; /* Adds rounded corners to the image */
+    object-fit: cover; /* Scales the image to cover the entire element */
+}
+
+#mass-rectangle.closed {
+    background-color: #e5b27c; /* Sets the background color of the closed mass rectangle */
+}
+
+#mass-rectangle.open {
+  background: #e5b27c;
+}
+
+#confession-rectangle.closed {
+    background-color: #456993; /* Sets the background color of the closed confession rectangle */
+}
+
+#adoration-rectangle.closed {
+    background-color: #ca735f; /* Sets the background color of the closed adoration rectangle */
+}
+
+#confession-rectangle.open {
+    background: #456993;
+}
+
+#confession-rectangle .text-beside-image {
+    color: #fbaf62;
+}
+
+#adoration-rectangle.open {
+    background: #ca735f;
+}
+
+#adoration-rectangle .text-beside-image {
+    color: #0d3a5b;
+}
+
+
+
+.mass-times {
+    text-align: left; /* Aligns the mass times text to the left */
+}
+
+#content-text {
+    color: black; /* Sets the text color to black */
+    text-align: center; /* Centers the text */
+    margin-top: 100px; /* Adds a margin to the top of the content text */
+}
+
+.mass-hour {
+    color: #B8860B; /* Sets the text color of the mass hour */
+}
+
+.today {
+    border: 1px solid #B8860B; /* Adds a border to the today element */
+    border-radius: 5px; /* Adds rounded corners to the today element */
+    padding: 5px; /* Adds padding to the today element */
+}
+
+.livestreaming {
+    font-size: 0.8rem; /* Sets the font size of the livestreaming text */
+    color: black; /* Sets the text color to black */
+    display: block; /* Makes the livestreaming text a block-level element */
+    text-align: left; /* Aligns the livestreaming text to the left */
+}
+
+.red-dot {
+    display: inline-block; /* Makes the red dot an inline-block element */
+    width: 8px; /* Sets the width of the red dot */
+    height: 8px; /* Sets the height of the red dot */
+    background-color: red; /* Sets the background color of the red dot to red */
+    border-radius: 50%; /* Makes the red dot a circle */
+    margin-right: 5px; /* Adds a margin to the right of the red dot */
+    vertical-align: middle; /* Aligns the red dot vertically to the middle */
+}
+
+.mass-schedule-frame {
+    border: 1px solid transparent; /* Adds a transparent border to the mass schedule frame */
+    border-radius: 10px; /* Adds rounded corners to the mass schedule frame */
+    padding: 10px; /* Adds padding to the mass schedule frame */
+    margin: 0 auto 40px; /* Adds a margin to the mass schedule frame */
+    max-width: 40%; /* Sets the maximum width of the mass schedule frame */
+}
+
+.expandable-rectangle {
+    flex-basis: 10%; /* Sets the initial width of the expandable rectangles */
+    flex-grow: 0; /* Prevents the rectangles from growing */
+    flex-shrink: 0; /* Prevents the rectangles from shrinking */
+    height: 600px; /* Sets the height of the expandable rectangles */
+    background-color: white; /* Sets the background color to white */
+    border-radius: 15px; /* Adds rounded corners to the rectangles */
+    margin: 0 10px; /* Adds a margin to the left and right of the rectangles */
+    display: flex; /* Enables flexbox layout for the rectangles */
+    align-items: center; /* Centers flex items vertically */
+    transition: flex-basis 1s ease; /* Adds a transition effect to the flex-basis property */
+    overflow: hidden; /* Hides any content that overflows the element's box */
+    position: relative; /* Establishes a positioning context for child elements */
+}
+
+.map-container {
+    margin-top: 20px; /* Adds a margin to the top of the map container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -410px;
+    margin-left: -150px;
+}
+
+.find-us {
+    position: absolute;
+    bottom: 97px;
+    left: 290px;
+    width: 80px;
+    font-size: 0.8em;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    text-shadow: 0 0 1px white;
+    margin-bottom: 5px;
+}
+
+.map-link {
+    position: absolute;
+    bottom: 20px;
+    left: 290px; /* 250px (image width) + 20px (image margin) + 20px (gap) */
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    background-image: url('image/findus.png');
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+}
+
+.live-stream-container {
+    position: absolute;
+    bottom: 20px;
+    left: 420px;
+    display: flex;
+    align-items: center;
+}
+
+.live-stream-button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.closed-rectangle-logo {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* Adjust size as needed */
+    height: auto;
+    display: none; /* Hidden by default */
+}
+
+.expandable-rectangle.closed .closed-rectangle-logo {
+    display: block; /* Show when rectangle is closed */
+}
+
+/* Sacraments Section */
+#sacraments {
+    height: 100vh; /* Sets the sacraments section height to 100% of the viewport height */
+    display: flex; /* Enables flexbox layout for the sacraments section */
+    justify-content: center; /* Centers flex items horizontally */
+    align-items: center; /* Centers flex items vertically */
+    background-color: #0b0c10; /* Sets the background color to a dark blue/black */
+    color: white; /* Sets the text color to white */
+    text-align: center; /* Centers the text */
+    position: relative; /* Establishes a positioning context for child elements */
+}
+
+#sacraments::before {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Positions the pseudo-element relative to the nearest positioned ancestor */
+    top: 0; /* Aligns the pseudo-element to the top of the sacraments section */
+    left: 0; /* Aligns the pseudo-element to the left of the sacraments section */
+    width: 100%; /* Sets the width of the pseudo-element to 100% */
+    height: 100%; /* Sets the height of the pseudo-element to 100% */
+    pointer-events: none; /* Allows pointer events to pass through the pseudo-element */
+    z-index: 1; /* Sets the stack order of the pseudo-element */
+}
+
+#sacraments-grid::before {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Positions the pseudo-element relative to the nearest positioned ancestor */
+    top: 0; /* Aligns the pseudo-element to the top of the sacraments section */
+    left: 0; /* Aligns the pseudo-element to the left of the sacraments section */
+    width: 100%; /* Sets the width of the pseudo-element to 100% */
+    height: 100%; /* Sets the height of the pseudo-element to 100% */
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px); /* Creates a grid using linear gradients */
+    background-size: calc(100% / 80) calc(100% / 60); /* Sets the size of the grid cells */
+    pointer-events: none; /* Allows pointer events to pass through the pseudo-element */
+    z-index: 1; /* Sets the stack order of the pseudo-element */
+}
+
+#grid-labels-top,
+#grid-labels-left {
+    position: absolute; /* Positions the grid labels relative to the nearest positioned ancestor */
+    z-index: 3; /* Sets the stack order of the grid labels */
+    color: rgba(255, 255, 255, 0.5); /* Sets the text color of the grid labels */
+    font-size: 12px; /* Sets the font size of the grid labels */
+    pointer-events: none; /* Allows pointer events to pass through the grid labels */
+}
+
+#grid-labels-top {
+    top: 0; /* Aligns the top grid labels to the top of the sacraments section */
+    left: 0; /* Aligns the top grid labels to the left of the sacraments section */
+    width: 100%; /* Sets the width of the top grid labels to 100% */
+    display: flex; /* Enables flexbox layout for the top grid labels */
+    justify-content: space-around; /* Distributes flex items evenly with space around them */
+}
+
+#grid-labels-left {
+    top: 0; /* Aligns the left grid labels to the top of the sacraments section */
+    left: 0; /* Aligns the left grid labels to the left of the sacraments section */
+    height: 100%; /* Sets the height of the left grid labels to 100% */
+    display: flex; /* Enables flexbox layout for the left grid labels */
+    flex-direction: column; /* Stacks flex items vertically */
+    justify-content: space-around; /* Distributes flex items evenly with space around them */
+    padding-left: 5px; /* Adds padding to the left of the left grid labels */
+}
+
+#sacraments-header-image {
+    position: absolute; /* Positions the header image relative to the nearest positioned ancestor */
+    top: calc(15 / 60 * 100%); /* Sets the vertical position of the header image */
+    left: calc(29 / 80 * 100%); /* Sets the horizontal position of the header image */
+    width: calc(23 / 80 * 100%); /* Sets the width of the header image */
+    z-index: 2; /* Sets the stack order of the header image */
+}
+
+.sacraments-content {
+    padding: 20px; /* Adds padding to the sacraments content */
+    max-width: 900px; /* Sets the maximum width of the sacraments content */
+}
+
+.sacraments-content h2 {
+    font-family: 'Ronzino Bold', sans-serif; /* Sets the font for the heading */
+    font-size: 3em; /* Sets the font size of the heading */
+    margin-bottom: 40px; /* Adds a margin to the bottom of the heading */
+}
+
+.button-container {
+    display: flex; /* Enables flexbox layout for the button container */
+    flex-wrap: wrap; /* Allows the buttons to wrap to the next line */
+    justify-content: center; /* Centers the buttons horizontally */
+    gap: 20px; /* Adds a gap between the buttons */
+}
+
+.sacrament-button {
+    background-color: #1f2833; /* Sets the background color of the sacrament buttons */
+    color: #66fcf1; /* Sets the text color of the sacrament buttons */
+    border: 2px solid #66fcf1; /* Adds a border to the sacrament buttons */
+    padding: 15px 30px; /* Adds padding to the sacrament buttons */
+    font-family: 'Ronzino Bold', sans-serif; /* Sets the font for the sacrament buttons */
+    font-size: 1.2em; /* Sets the font size of the sacrament buttons */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    transition: all 0.3s ease; /* Adds a transition effect to all properties */
+    border-radius: 5px; /* Adds rounded corners to the sacrament buttons */
+}
+
+.sacrament-button:hover {
+    background-color: #66fcf1; /* Sets the background color of the sacrament buttons on hover */
+    color: #0b0c10; /* Sets the text color of the sacrament buttons on hover */
+}
+
+
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: white;
+    font-family: 'Ronzino Bold', sans-serif;
+    font-size: 2em;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+#adoration-rectangle .vertical-text {
+    transform: rotate(180deg);
+}
+
+#confession-rectangle .vertical-text,
+#mass-rectangle .vertical-text {
+    transform: rotate(180deg);
+}
+
+.text-beside-image {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: -10px;
+    margin-bottom: 100px;
+    text-align: left;
+    font-family: 'Ortica Linear', sans-serif;
+    color: #125587;
+}
+
+.text-beside-image p strong {
+    font-size: 1.5em;
+}
+
+.weekly-mass-end {
+    margin-bottom: 20px;
+}
+
+
+
+/* Stars */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: blink 2s infinite;
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
+}

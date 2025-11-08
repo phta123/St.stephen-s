@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section Animation</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+</head>
+<body>
+    <header id="main-header">
+        <img src="image/Logo.png" alt="St. Stephen Logo" id="header-logo">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Mass Times</a></li>
+                <li><a href="#">The Sacraments</a></li>
+                <li><a href="#">Newsletter</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">DONATE</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="hero">
+            <video id="hero-background-video" muted autoplay>
+                <source src="video/scene.webm" type="video/webm">
+                <source src="video/scene.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div id="centered-text">
+                <p class="st">ST.</p>
+                <p class="stephens">STEPHEN'S</p>
+                <p class="parish">PARISH</p>
+                <div class="location-container">
+                    <p class="location">MANOR PARK | LONDON</p>
+                    <p class="location-subtext">Roman Catholic Church</p>
+                </div>
+            </div>
+            
+        </section>
+        <section id="content">
+            <div class="welcome-text">
+                <span class="welcome-parish">Welcome</span>
+                <span class="to-our">to our</span>
+                <span class="welcome-parish">Parish</span>
+                <p class="welcome-subtext">Our doors and our hearts are open to you. We're a warm, multicultural community, united by the sacred heart of Christ. We invite you to simply stop by and get to know our community as we share the faith of the Roman Catholic Church.</p>
+            </div>
+            <div class="header-line"></div>
+            <div class="horizontal-line"></div>
+            <div class="rectangles-container">
+                                                <div id="mass-rectangle" class="expandable-rectangle closed">
+                                                    <div class="vertical-text">Mass Times</div>
+                                                    <img src="image/Mass.jpg" alt="Mass Image" class="rect-image">
+                                                    <div class="text-beside-image">
+                                                        <p><strong>Weekly Mass Times</strong></p>
+                                                        <p class="mass-time-entry">Monday – 09:15</p>
+                                                        <p class="mass-time-entry">Tuesday – 09:15</p>
+                                                        <p class="mass-time-entry">Wednesday – 09:15</p>
+                                                        <p class="mass-time-entry">Thursday – 09:15</p>
+                                                        <p class="weekly-mass-end mass-time-entry">Friday – 09:15</p>
+                                                        <p><strong>Weekend Mass Times</strong></p>
+                                                        <p class="mass-time-entry">Saturday – 18:00</p>
+                                                        <p class="mass-time-entry">Sunday – 09:00 - 11:00</p>
+                                                    </div>
+                                                    <p class="find-us">Find us</p>
+                                                    <a href="https://share.google/8fvvOZnT10sjER1b3" target="_blank" class="map-link">
+                                                        <div class="map-placeholder"></div>
+                                                    </a>
+                                                    <div class="live-stream-container">
+                                                        <span class="red-dot"></span>
+                                                        <button class="live-stream-button">Live Streaming</button>
+                                                    </div>
+
+
+                                                </div>                                                <div id="confession-rectangle" class="expandable-rectangle closed">
+                                                    <div class="vertical-text">Confession Times</div>
+                                                    <img src="image/confession.jpeg" alt="Confession Image" class="rect-image">
+                                                    <div class="text-beside-image">
+                                                        <p><strong>Confession</strong></p>
+                                                        <p>Adoration and Confessions after 9.15 am Mass on Friday.</p>
+                                                        <p>confession also on Saturday 5.00 pm to 5.30 pm.</p>
+                                                    </div>
+                                                    <img src="image/logo1.png" alt="Logo 1" class="closed-rectangle-logo">
+                                                </div>                <div id="adoration-rectangle" class="expandable-rectangle closed">
+                    <div class="vertical-text">Eucharistic Adoration</div>
+                    <img src="image/eucharistic.jpg" alt="Eucharistic Adoration Image" class="rect-image">
+                    <div class="text-beside-image">
+                        <p><strong>Eucharistic Adoration</strong></p>
+                        <p>Adoration and Confessions after 9.15 am Mass on Friday.</p>
+                    </div>
+                    <img src="image/logo1.png" alt="Logo 1" class="closed-rectangle-logo">
+                </div>
+            </div>
+
+        </section>
+        <section id="sacraments">
+            <div id="sacraments-grid"></div>
+            <div id="grid-labels-top"></div>
+            <div id="grid-labels-left"></div>
+            <img src="image/sacraments_header.png" id="sacraments-header-image" alt="Sacraments Header">
+            <div class="sacraments-content">
+                <h2>THE SACRAMENTS</h2>
+                <div class="button-container">
+                    <button class="sacrament-button">BAPTISM</button>
+                    <button class="sacrament-button">HOLY EUCHARIST</button>
+                    <button class="sacrament-button">CONFIRMATION</button>
+                    <button class="sacrament-button">RECONCILIATION</button>
+                    <button class="sacrament-button">ANOINTING OF THE SICK</button>
+                    <button class="sacrament-button">HOLY ORDERS</button>
+                    <button class="sacrament-button">MATRIMONY</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js?v=1.0"></script>
+</body>
+</html>
