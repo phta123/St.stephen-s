@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section Animation</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+</head>
+<body>
+    <canvas id="backgroundCanvas"></canvas>
+    <div class="container">
+        <section id="hero">
+            <div class="hero-content-sticky">
+                <header id="main-header">
+                    <img src="image/Logo.png" alt="St. Stephen Logo" id="header-logo">
+                    <nav>
+                        <ul>
+                            <li><div class="header-link-box"><a href="#">Home</a></div></li>
+                            <li><div class="header-link-box"><a href="#">Mass Times</a></div></li>
+                            <li><div class="header-link-box"><a href="#">The Sacraments</a></div></li>
+                            <li><div class="header-link-box"><a href="#">Newsletter</a></div></li>
+                            <li><div class="header-link-box"><a href="#">Contact</a></div></li>
+                            <li><div class="header-link-box"><a href="#">DONATE</a></div></li>
+                        </ul>
+                    </nav>
+                </header>
+                <video id="hero-background-video" muted autoplay>
+                    <source src="video/scene.webm" type="video/webm">
+                    <source src="video/scene.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="centered-text">
+                    <p class="st">ST.</p>
+                    <p class="stephens">STEPHEN'S</p>
+                    <p class="parish">PARISH</p>
+                </div>
+                <div id="location-box" class="location-box">
+                    <p class="location-text">MANOR PARK | LONDON</p>
+                </div>
+            </div>
+        </section>
+        <section id="content">
+            <img src="image/1.png" alt="Placeholder 1" class="welcome-photo-placeholder left top">
+            <img src="image/2.png" alt="Placeholder 2" class="welcome-photo-placeholder right top">
+            <img src="image/3.png" alt="Placeholder 3" class="welcome-photo-placeholder left bottom">
+            <img src="image/4.png" alt="Placeholder 4" class="welcome-photo-placeholder right bottom">
+            <div class="welcome-text">
+                <span class="welcome-parish">Welcome</span>
+                <span class="to-our">to our</span>
+                <span class="welcome-parish">Parish</span>
+                <p class="welcome-subtext">A special welcome awaits everyone looking for spiritual home. We are a lively,  parish family, all committed to the truth found in the Sacred Heart of our Lord.
+
+We invite you to visit us and learn more about Christ, living in His very presence in the most blessed Sacraments of the Roman Catholic Church.</p>
+            </div>
+            <div class="header-line"></div>
+            <div class="horizontal-line"></div>
+            <div class="vertical-parish-text">
+                <p class="st">ST.</p>
+                <p class="stephens">STEPHEN'S</p>
+                <p class="parish">PARISH</p>
+            </div>
+            <div class="rectangles-container">
+                                                <div id="mass-rectangle" class="expandable-rectangle open">
+                                                    <div class="vertical-text">Mass Times</div>
+                                                    <img src="image/lis.png" class="closed-lis">
+                                                    <img src="image/Logo1.png" class="closed-logo">
+                                                    <img src="image/Mass.jpg" alt="Mass Image" class="rect-image">
+                                                    <div class="text-beside-image">
+                                                        <p><strong>Weekly Mass Times</strong></p>
+                                                        <p class="mass-time-entry">Monday – 09:15</p>
+                                                        <p class="mass-time-entry">Tuesday – 09:15</p>
+                                                        <p class="mass-time-entry">Wednesday – 09:15</p>
+                                                        <p class="mass-time-entry">Thursday – 09:15</p>
+                                                        <p class="weekly-mass-end mass-time-entry">Friday – 09:15</p>
+                                                        <p><strong>Weekend Mass Times</strong></p>
+                                                        <p class="mass-time-entry">Saturday – 18:00</p>
+                                                        <p class="mass-time-entry">Sunday – 09:00 - 11:00</p>
+                                                    </div>
+                                                    <p class="find-us">Find us</p>
+                                                    <a href="https://share.google/8fvvOZnT10sjER1b3" target="_blank" class="map-link">
+                                                        <div class="map-placeholder"></div>
+                                                    </a>
+                                                    <div class="live-stream-container">
+                                                        <span class="red-dot"></span>
+                                                        <button class="live-stream-button">Live Streaming</button>
+                                                    </div>
+
+
+                                                </div>                                                <div id="confession-rectangle" class="expandable-rectangle closed">
+                                                    <div class="vertical-text">Confession Times</div>
+                                                    <img src="image/lis.png" class="closed-lis">
+                                                    <img src="image/Logo1.png" class="closed-logo">
+                                                    <img src="image/confession.jpeg" alt="Confession Image" class="rect-image">
+                                                    <div class="text-beside-image">
+                                                        <p><strong>Confession</strong></p>
+                                                        <p>After 9.15 am Mass on Friday.</p>
+                                                        <p>Saturday 5.00 pm to 5.30 pm.</p>
+                                                    </div>
+                                                </div>                <div id="adoration-rectangle" class="expandable-rectangle closed">
+                    <div class="vertical-text">Eucharistic Adoration</div>
+                    <img src="image/lis.png" class="closed-lis">
+                    <img src="image/Logo1.png" class="closed-logo">
+                    <img src="image/eucharistic.jpg" alt="Eucharistic Adoration Image" class="rect-image">
+                    <div class="text-beside-image">
+                        <p><strong>Eucharistic Adoration</strong></p>
+                        <p>After 9.15 am Mass on Friday.</p>
+                    </div>
+                </div>
+            </div>
+                                <div class="arrow-circle-symbol">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="8 12 12 16 16 12"></polyline>
+                                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                                    </svg>
+                                </div>            <div class="vertical-newsletter-text">
+                <p>Newsletter</p>
+            </div>
+        </section>
+
+    </div>
+    <script src="animated_background.js"></script>
+    <script src="script.js?v=1.0"></script>
+</body>
+</html>
