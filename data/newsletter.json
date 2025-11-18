@@ -1,5 +1,5 @@
 {
-  "cards": [
+  "cards": []
     {
       "text": "Welcome to our weekly newsletter.",
       "backgroundColor": "#ffffff",
@@ -16,4 +16,5 @@
     }
   ]
 }
+
 
