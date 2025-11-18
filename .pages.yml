@@ -1,37 +1,39 @@
 media:
-  input: "image"
-  output: "/image"
+  input: image
+  output: /image
 
 content:
-  - name: "newsletter"
-    label: "Newsletter Section"
-    type: "file"
-    path: "data/newsletter.json"
-    format: "json"
+  - name: newsletter
+    label: Newsletter Section
+    type: file
+    path: data/newsletter.json
+    format: json
     fields:
-      - name: "final_list"
-        label: "Newsletter Cards"
-        type: "list"
-        default: []
+      - name: final_items
+        label: Newsletter Cards
+        type: list
         fields:
-          - name: "text"
-            label: "Message"
-            type: "rich-text"
+          - name: text
+            label: Message
+            type: string
             required: true
-          - name: "backgroundColor"
-            label: "Background Color"
-            type: "color"
-          - name: "textColor"
-            label: "Text Color"
-            type: "color"
-          - name: "fontSize"
-            label: "Font Size"
-            type: "string"
-            default: "1.2rem"
-          - name: "fontFamily"
-            label: "Font"
-            type: "select"
+          - name: backgroundColor
+            label: Background Color
+            type: color
+          - name: textColor
+            label: Text Color
+            type: color
+          - name: fontSize
+            label: Font Size
+            type: string
+            default: 1.2rem
+          - name: fontFamily
+            label: Font
+            type: select
             options:
-              - { label: "Ortica Linear", value: "'Ortica Linear', sans-serif" }
-              - { label: "Ronzino Bold", value: "'Ronzino Bold', sans-serif" }
-              - { label: "Standard Sans", value: "sans-serif" }
+              - value: "'Ortica Linear', sans-serif"
+                label: Ortica Linear
+              - value: "'Ronzino Bold', sans-serif"
+                label: Ronzino Bold
+              - value: sans-serif
+                label: Standard Sans
