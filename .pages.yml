@@ -5,14 +5,13 @@ media:
 content:
   - name: newsletter
     label: Newsletter Section
-    type: file
-    path: data/updates.json
+    type: object         # <-- CHANGE THIS
+    file: data/updates.json   # <-- CHANGE THIS
     fields:
       - name: news_items
         label: Newsletter Cards
         type: list
         allow_add: true
-        default: []
         fields:
           - name: text
             label: Message
