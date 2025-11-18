@@ -11,6 +11,7 @@ content:
       - name: news_items
         label: Newsletter Cards
         type: list
+        allow_add: true
         default: []
         fields:
           - name: text
