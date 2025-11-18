@@ -5,35 +5,31 @@ media:
 content:
   - name: newsletter
     label: Newsletter Section
-    type: object         # <-- CHANGE THIS
-    file: data/updates.json   # <-- CHANGE THIS
+    type: file
+    path: data/newsletter.yml
+    format: yaml
     fields:
-      - name: news_items
+      - name: cards
         label: Newsletter Cards
         type: list
-        allow_add: true
         fields:
           - name: text
             label: Message
             type: string
-            required: true
           - name: backgroundColor
             label: Background Color
             type: color
           - name: textColor
             label: Text Color
             type: color
-          - name: fontFamily
-            label: Font
-            type: select
-            options:
-              - value: "'Ortica Linear', sans-serif"
-                label: Ortica Linear
-              - value: "'Ronzino Bold', sans-serif"
-                label: Ronzino Bold
-              - value: sans-serif
-                label: Standard Sans
           - name: fontSize
             label: Font Size
             type: string
             default: 1.2rem
+          - name: fontFamily
+            label: Font
+            type: select
+            options:
+              - "Ortica Linear"
+              - "Ronzino Bold"
+              - "sans-serif"
