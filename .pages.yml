@@ -1,38 +1,14 @@
 collections:
-  - name: Newsletter Rectangles # Added name for the collection
-    path: index.html
-    selector: .newsletter-content
-    schema:
-      type: array
-      items:
-        type: object
-        properties:
-          text:
-            type: string
-          color:
-            type: string
-            format: color
-          top:
-            type: number
-          left:
-            type: number
-    new_item:
-      type: object
-      properties:
-        text:
-          type: string
-          default: "New rectangle"
-        color:
-          type: string
-          format: color
-          default: "#cccccc"
-        top:
-          type: number
-          default: 10
-        left:
-          type: number
-          default: 10
-    item_template: |
-      <div class="newsletter-rectangle" style="background-color: {{color}}; top: {{top}}px; left: {{left}}px;">
-        <p>{{text}}</p>
-      </div>
+  - name: "newsletter"
+    label: "Newsletter"
+    file: "content/newsletter.json"
+    create: true
+    fields:
+      - name: "items"
+        label: "Newsletter Items"
+        type: "list"
+        fields:
+          - { name: text, label: Text, type: string, required: true}
+          - { name: color, label: Color, type: string, required: true}
+          - { name: top, label: Top, type: number, required: true }
+          - { name: left, label: Left, type: number, required: true }
