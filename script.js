@@ -140,7 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- NEWSLETTER FUNCTION (Updated for 'final_items') ---
+    // --- UPDATED NEWSLETTER FUNCTION ---
+    // This connects to the new 'data/updates.json' file
     function loadNewsletterItems() {
         const newsletterContent = document.querySelector('.newsletter-content');
         if (!newsletterContent) return;
@@ -148,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear existing content
         newsletterContent.innerHTML = '';
 
-        fetch('data/newsletter.json')
+        fetch('data/updates.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -156,19 +157,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then(data => {
-                // Looking for 'final_items' to match the clean config
-                if (data && data.final_items) {
-                    data.final_items.forEach(item => {
+                // Checks for the new list name 'news_items'
+                if (data && data.news_items) {
+                    data.news_items.forEach(item => {
                         const rect = document.createElement('div');
                         rect.classList.add('newsletter-rectangle');
                         
-                        // Apply styles from CMS data
+                        // Apply styles from CMS
                         rect.style.backgroundColor = item.backgroundColor || '#ffffff';
                         rect.style.color = item.textColor || '#000000';
                         rect.style.fontFamily = item.fontFamily || 'sans-serif';
                         rect.style.fontSize = item.fontSize || '1rem';
                         
-                        // Set text content
+                        // Set text
                         rect.innerHTML = item.text;
                         
                         newsletterContent.appendChild(rect);
