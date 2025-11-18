@@ -140,44 +140,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- SIMPLIFIED NEWSLETTER FUNCTION ---
-    // Connects to 'data/newsletter.json' and looks for 'items'
-    function loadNewsletterItems() {
+    // --- UPDATED FUNCTION FOR COLLECTION FOLDER ---
+    async function loadNewsletterItems() {
         const newsletterContent = document.querySelector('.newsletter-content');
         if (!newsletterContent) return;
 
         newsletterContent.innerHTML = '';
 
-        fetch('data/newsletter.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data && data.items) {
-                    data.items.forEach(item => {
-                        const rect = document.createElement('div');
-                        rect.classList.add('newsletter-rectangle');
-                        
-                        // Apply styles
-                        rect.style.backgroundColor = item.backgroundColor || '#ffffff';
-                        rect.style.color = item.textColor || '#000000';
-                        rect.style.fontFamily = item.fontFamily || 'sans-serif';
-                        rect.style.fontSize = '1.2rem'; // Fixed size for simplicity
-                        
-                        // Set text
-                        rect.innerHTML = item.text;
-                        
-                        newsletterContent.appendChild(rect);
-                    });
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching newsletter items:', error);
-                newsletterContent.innerHTML = '<p>Check back soon for updates.</p>';
-            });
+        // We will try to fetch items named 1.json, 2.json, etc.
+        // This matches the "Collection" style where every card is a file.
+        for (let i = 1; i <= 20; i++) {
+            try {
+                const response = await fetch(`content/newsletter/${i}.json`);
+                
+                // If file doesn't exist, stop the loop (or skip)
+                if (!response.ok) continue; 
+
+                const item = await response.json();
+
+                const rect = document.createElement('div');
+                rect.classList.add('newsletter-rectangle');
+                
+                rect.style.backgroundColor = item.backgroundColor || '#ffffff';
+                rect.style.color = item.textColor || '#000000';
+                rect.style.fontFamily = item.fontFamily || 'sans-serif';
+                rect.style.fontSize = item.fontSize || '1rem';
+                
+                rect.innerHTML = item.text;
+                
+                newsletterContent.appendChild(rect);
+            } catch (error) {
+                // Ignore errors for missing files
+            }
+        }
     }
 
     loadNewsletterItems();
