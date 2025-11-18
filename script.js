@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear existing content
         newsletterContent.innerHTML = '';
 
-        fetch('content/newsletter.json')
+        fetch('data/newsletter.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
