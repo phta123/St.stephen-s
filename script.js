@@ -157,8 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(data => {
                 // This now looks for 'cards' to match your new configuration
-                if (data && data.cards) {
-                    data.cards.forEach(item => {
+                if (data && data.news_list) {
+                    data.news_list.forEach(item => {
                         const rect = document.createElement('div');
                         rect.classList.add('newsletter-rectangle');
                         
