@@ -8,15 +8,15 @@ content:
     type: collection
     path: content/newsletter
     format: json
-    view:
-      fields: [slug, text, backgroundColor]
+    extension: json
+    slug: "{{slug}}"
     fields:
       - name: slug
         label: "Card Number (Enter 1, 2, 3...)"
         type: string
         required: true
         pattern: "^[0-9]+$"
-        hint: "This MUST be a number. It links the card to your website script."
+        hint: "This MUST be a number like 1, 2, or 3."
       - name: text
         label: Message
         type: string
