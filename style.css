@@ -284,7 +284,7 @@ section {
 .vertical-parish-text {
     position: absolute;
     left: 50px;
-    top: calc(50% - 800px); /* Moved an additional 400px up */
+    top: calc(50% - 700px); /* Moved an additional 400px up */
     transform: translateY(-50%) rotate(180deg);
     writing-mode: vertical-rl;
     text-orientation: mixed;
@@ -309,7 +309,7 @@ section {
 .vertical-newsletter-text {
     position: absolute;
     right: 100px;
-    top: calc(50% - 1030px);
+    top: calc(50% - 930px);
     writing-mode: vertical-rl;
     text-orientation: mixed;
     color: black;
@@ -323,7 +323,7 @@ section {
 }
 
 .vertical-newsletter-text.newsletter-animate {
-    top: 400px; /* Adjust to be 100px below the rectangles */
+    top: 500px; /* Adjust to be 100px below the rectangles */
     left: 50%;
     transform: translateX(-50%) rotate(0deg);
     writing-mode: horizontal-tb;
@@ -336,7 +336,7 @@ section {
     width: 100%; /* Sets the width of the rectangles container to 100% */
     margin-bottom: 50px; /* Adds a margin to the bottom of the rectangles container */
     margin-top: 50px;
-    transform: translateY(-1300px); /* Moved an additional 300px up */
+    transform: translateY(-1200px); /* Moved an additional 300px up */
 }
 
 .expandable-rectangle {
@@ -428,11 +428,20 @@ section {
 }
 
 #mass-rectangle.closed {
-    background-color: #ffb703; /* Sets the background color of the closed mass rectangle */
+    background-color: #ffb703;
+    mix-blend-mode: screen;
 }
 
 #mass-rectangle.open {
   background: #ffb703;
+  mix-blend-mode: screen;
+}
+
+.transparent-text-wrapper {
+    mix-blend-mode: screen;
+    display: inline-block;
+    padding: 0 5px;
+    color: white; /* Set text color to white for screening effect */
 }
 
 #confession-rectangle.closed {
@@ -612,9 +621,16 @@ section {
     font-size: 1.5em;
 }
 
-#mass-rectangle .text-beside-image p strong {
-    color: white;
+.transparent-text-wrapper {
+    mix-blend-mode: screen;
+    display: inline-block;
+    padding: 0 5px;
 }
+
+/* Removed conflicting color property */
+/* #mass-rectangle .text-beside-image p strong {
+    color: white;
+} */
 
 .mass-time-entry {
     font-weight: bold;
@@ -622,7 +638,7 @@ section {
 
 .arrow-circle-symbol {
     position: absolute;
-    top: 330px;
+    top: 430px;
     left: calc(50% + 590px);
     transform: translateX(-50%);
     color: black;
@@ -686,3 +702,30 @@ section {
     height: 100vh;
     z-index: -2; /* Lower than the hero video */
 }
+
+/* Newsletter Section */
+#newsletter-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.newsletter-rectangle {
+    position: absolute;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    height: 200px;
+    color: black;
+}
+
