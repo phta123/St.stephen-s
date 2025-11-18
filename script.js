@@ -118,4 +118,57 @@ document.addEventListener('DOMContentLoaded', () => {
             arrowSymbol.classList.remove('hidden');
         }
     });
+
+    const massTimesLink = document.querySelector('a[href="#mass-times-section"]');
+    const massTimesSection = document.getElementById('mass-times-section');
+
+    massTimesLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const containerRect = container.getBoundingClientRect();
+        const sectionRect = massTimesSection.getBoundingClientRect();
+
+        const offsetTop = sectionRect.top - containerRect.top + container.scrollTop;
+        const containerHeight = container.clientHeight;
+        const sectionHeight = massTimesSection.clientHeight;
+
+        const scrollToPosition = offsetTop - (containerHeight / 2) + (sectionHeight / 2);
+
+        container.scrollTo({
+            top: scrollToPosition,
+            behavior: 'smooth'
+        });
+    });
+
+    function loadNewsletterItems() {
+        const newsletterContent = document.querySelector('.newsletter-content');
+        if (!newsletterContent) return;
+
+        fetch('content/newsletter.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data && data.items) {
+                    data.items.forEach(item => {
+                        const rect = document.createElement('div');
+                        rect.classList.add('newsletter-rectangle');
+                        rect.style.backgroundColor = item.color;
+                        rect.style.top = `${item.top}px`;
+                        rect.style.left = `${item.left}px`;
+                        rect.innerHTML = `<p>${item.text}</p>`;
+                        newsletterContent.appendChild(rect);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching or parsing newsletter items:', error);
+                newsletterContent.innerHTML = '<p>Could not load newsletter content.</p>';
+            });
+    }
+
+    loadNewsletterItems();
 });
