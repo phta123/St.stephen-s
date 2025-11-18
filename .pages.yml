@@ -1,6 +1,6 @@
 media:
-  input: ""
-  output: ""
+  input: "image"
+  output: "/image"
 
 content:
   - name: "newsletter"
