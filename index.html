@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section Animation</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <link rel="stylesheet" href="newsletter.css?v=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <canvas id="backgroundCanvas"></canvas>
+
+    <header id="main-header">
+        <div class="max-width-container header-container">
+            <img src="image/Logo.png" alt="St. Stephen Logo" id="header-logo">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#mass-times-section">Mass Times</a></li>
+                    <li><a href="#sacraments-section">The Sacraments</a></li>
+                    <li><a href="#newsletter-section">Newsletter</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="https://www.dioceseofbrentwood.net/donations/?parish=manor-park">DONATE</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="hero">
+            <div class="hero-content-sticky">
+                <video id="hero-background-video" muted autoplay>
+                    <source src="video/scene.webm" type="video/webm">
+                    <source src="video/scene.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="centered-text">
+                    <p class="st">ST.</p>
+                    <p class="stephens">STEPHEN'S</p>
+                    <p class="parish">PARISH</p>
+                </div>
+                <div id="location-box" class="location-box">
+                    <p class="location-text">MANOR PARK | LONDON</p>
+                </div>
+            </div>
+        </section>
+
+        <main class="main-content-area">
+            <section id="welcome-section">
+                <div class="max-width-container">
+                    <div class="welcome-grid">
+                        <div class="welcome-text-container">
+                            <span class="welcome-parish">Welcome</span>
+                            <span class="to-our">to our</span>
+                            <span class="welcome-parish">Parish</span>
+                            <p class="welcome-subtext">A special welcome awaits everyone looking for spiritual home. We are a lively, parish family, all committed to the truth found in the Sacred Heart of our Lord.
+                            <br><br>
+                            We invite you to visit us and learn more about Christ, living in His very presence in the most blessed Sacraments of the Roman Catholic Church.</p>
+                        </div>
+                        <img src="image/1.png" alt="Placeholder 1" class="welcome-photo-placeholder">
+                        <img src="image/2.png" alt="Placeholder 2" class="welcome-photo-placeholder">
+                        <img src="image/3.png" alt="Placeholder 3" class="welcome-photo-placeholder">
+                        <img src="image/4.png" alt="Placeholder 4" class="welcome-photo-placeholder">
+                    </div>
+                </div>
+            </section>
+
+            <section id="mass-times-section">
+                <div class="max-width-container">
+                    <div class="rectangles-container">
+                        <div id="mass-rectangle" class="expandable-rectangle open">
+                            <div class="vertical-text">Mass Times</div>
+                            <img src="image/Logo1.png" class="closed-logo">
+                            <img src="image/Mass.jpg" alt="Mass Image" class="rect-image">
+                            <div class="text-beside-image">
+                                <p><span class="transparent-text-wrapper"><strong>Weekly Mass Times</strong></span></p>
+                                <p class="mass-time-entry">Monday – 09:15</p>
+                                <p class="mass-time-entry">Tuesday – 09:15</p>
+                                <p class="mass-time-entry">Wednesday – 09:15</p>
+                                <p class="mass-time-entry">Thursday – 09:15</p>
+                                <p class="weekly-mass-end mass-time-entry">Friday – 09:15</p>
+                                <p><span class="transparent-text-wrapper"><strong>Weekend Mass Times</strong></span></p>
+                                <p class="mass-time-entry">Saturday – 18:00</p>
+                                <p class="mass-time-entry">Sunday – 09:00 - 11:00</p>
+                            </div>
+                            <p class="find-us">Find us</p>
+                            <a href="https://share.google/8fvvOZnT10sjER1b3" target="_blank" class="map-link">
+                                <div class="map-placeholder"></div>
+                            </a>
+                            <div class="live-stream-container">
+                                <span class="red-dot"></span>
+                                <button class="live-stream-button">Live Streaming</button>
+                            </div>
+                        </div>
+                        <div id="confession-rectangle" class="expandable-rectangle closed">
+                            <div class="vertical-text">Confession Times</div>
+                            <img src="image/Logo1.png" class="closed-logo">
+                            <img src="image/confession.jpeg" alt="Confession Image" class="rect-image">
+                            <div class="text-beside-image">
+                                <p><strong>Confession</strong></p>
+                                <p>After 9.15 am Mass on Friday.</p>
+                                <p>Saturday 5.00 pm to 5.30 pm.</p>
+                            </div>
+                        </div>
+                        <div id="adoration-rectangle" class="expandable-rectangle closed">
+                            <div class="vertical-text">Eucharistic Adoration</div>
+                            <img src="image/Logo1.png" class="closed-logo">
+                            <img src="image/eucharistic.jpg" alt="Eucharistic Adoration Image" class="rect-image">
+                            <div class="text-beside-image">
+                                <p><strong>Eucharistic Adoration</strong></p>
+                                <p>After 9.15 am Mass on Friday.</p>
+                                <p>Saturday 5.00 pm to 5.30 pm.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="eucharist-verse" class="eucharist-verse"></div>
+                </div>
+            </section>
+            
+            <section id="newsletter-section">
+                <div class="max-width-container">
+                    <div class="newsletter-content">
+                         <div class="newsletter-content">
+            <!-- Header Section -->
+            <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <span class="inline-block py-1 px-3 rounded-full bg-white border border-primary-blue text-primary-blue text-xs font-bold uppercase tracking-wider mb-2 shadow-sm">Weekly Newsletter</span>
+                    <h1 class="font-serif text-3xl md:text-5xl font-bold text-dark-text drop-shadow-sm">Mass Times and Intentions</h1>
+                    <p class="text-dark-text/80 mt-2 text-lg font-medium">St. Stephen’s Church, Manor Park</p>
+                </div>
+                <div class="text-right hidden md:block">
+                    <p class="text-sm font-bold text-dark-text uppercase tracking-wide bg-white/80 px-3 py-1 rounded-lg inline-block">TWENTY-NINTH SUNDAY IN ORDINARY TIME YEAR C</p>
+                    <div class="mt-1">
+                        <p class="text-xs text-white font-bold uppercase bg-accent-gold px-3 py-1.5 rounded-full inline-block shadow-sm">WORLD MISSION SUNDAY (19.10.2025)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[minmax(180px,auto)]">
+
+            <!-- 1. MASS SCHEDULE (Primary Blue Header) -->
+            <div id="mass-times" class="bento-card col-span-1 md:col-span-2 row-span-2 h-[650px]">
+                <div class="p-5 bg-primary-blue text-white flex justify-between items-center">
+                    <div>
+                        <h3 class="font-serif font-bold text-2xl">Mass Schedule</h3>
+                        <p class="text-primary-blue/20 text-white/80 text-xs uppercase tracking-wider mt-0.5">Weekly Liturgy</p>
+                    </div>
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <i class="fa-solid fa-calendar-days text-white"></i>
+                    </div>
+                </div>
+                
+                <div class="p-6 overflow-y-auto custom-scroll space-y-4 flex-grow bg-white">
+                    <!-- Morning Prayer Widget -->
+                    <div class="bg-blue-50 p-4 rounded-xl flex items-start gap-3 border-l-4 border-primary-blue">
+                        <i class="fa-solid fa-sun text-primary-blue mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-primary-blue text-sm">Morning Prayers</h4>
+                            <p class="text-dark-text text-sm mt-1">Mondays, Tuesdays, Thursdays, and Fridays, there is Morning Prayers at 8.40am, followed by the Rosary, and then Mass.</p>
+                        </div>
+                    </div>
+
+                    <!-- Days Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Sat -->
+                        <div class="bg-white border border-slate-100 p-4 rounded-xl shadow-sm hover:border-secondary-blue transition-colors">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-bold text-dark-text text-sm uppercase">Sat 18 Oct</span>
+                                <span class="text-[10px] font-bold bg-secondary-blue text-white px-2 py-0.5 rounded">Vigil</span>
+                            </div>
+                            <p class="text-light-text text-xs mb-2">Feast of St Luke, Ev.</p>
+                            <p class="text-sm font-semibold text-secondary-blue">6.00pm Vigil Mass</p>
+                        </div>
+
+                        <!-- Sun -->
+                        <div class="bg-white border border-slate-100 p-4 rounded-xl shadow-sm hover:border-accent-gold transition-colors">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-bold text-dark-text text-sm uppercase">Sun 19 Oct</span>
+                                <span class="text-[10px] font-bold bg-accent-gold text-white px-2 py-0.5 rounded">Sunday</span>
+                            </div>
+                            <p class="text-light-text text-xs mb-2">29th Sunday Ordinary Time</p>
+                            <div class="flex justify-between text-sm font-semibold text-accent-gold">
+                                <span>9.00 a.m.</span>
+                                <span>11.00 a.m.</span>
+                            </div>
+                        </div>
+
+                        <!-- Weekdays -->
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            <span class="font-bold text-dark-text text-sm uppercase block">Mon 20 Oct</span>
+                            <p class="text-xs text-light-text mb-1">Feria</p>
+                            <p class="text-sm font-medium text-dark-text">9.15 a.m. Mass</p>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            <span class="font-bold text-dark-text text-sm uppercase block">Tue 21 Oct</span>
+                            <p class="text-xs text-light-text mb-1">Feria</p>
+                            <p class="text-sm font-medium text-dark-text">9.15 a.m. Mass</p>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 opacity-70">
+                            <span class="font-bold text-dark-text text-sm uppercase block">Wed 22 Oct</span>
+                            <p class="text-xs text-light-text mb-1">Feria/St John Paul II</p>
+                            <p class="text-sm font-medium text-light-text italic">9.15 a.m. No Mass</p>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            <span class="font-bold text-dark-text text-sm uppercase block">Thu 23 Oct</span>
+                            <p class="text-xs text-light-text mb-1">Feria</p>
+                            <p class="text-sm font-medium text-dark-text">9.15 a.m. Mass</p>
+                        </div>
+                        <div class="bg-blue-50/50 p-3 rounded-lg border border-blue-100 col-span-1 sm:col-span-2 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-dark-text text-sm uppercase block">Fri 24 Oct</span>
+                                <p class="text-xs text-light-text mb-1">St Antony Mary Claret</p>
+                                <p class="text-sm font-medium text-dark-text">9.15 a.m. Mass</p>
+                            </div>
+                            <span class="text-xs bg-white border border-blue-200 text-primary-blue px-2 py-1 rounded font-medium">Adoration & Confessions</span>
+                        </div>
+                        
+                        <!-- Next Weekend -->
+                         <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            <span class="font-bold text-dark-text text-sm uppercase block">Sat 25 Oct</span>
+                            <p class="text-sm text-light-text">6.00 p.m. Vigil Mass</p>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            <span class="font-bold text-dark-text text-sm uppercase block">Sun 26 Oct</span>
+                            <p class="text-sm text-light-text">9.00 a.m. & 11.00 a.m.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. MASS INTENTIONS (Gold Header) -->
+            <div class="bento-card col-span-1 row-span-2 h-[650px]">
+                <div class="p-5 bg-accent-gold text-white flex">
+                    <h3 class="font-serif font-bold">Intentions</h3>
+                    <p class="text-white/80 text-xs">Mass Offerings</p>
+                </div>
+                <div class="p-6 overflow-y-auto custom-scroll space-y-4 bg-white flex-grow">
+                    <div class="space-y-4">
+                        <div class="border-b border-slate-100 pb-3">
+                            <p class="text-xs font-bold text-accent-gold uppercase mb-1">Sat 18 Oct (Vigil)</p>
+                            <p class="text-sm text-dark-text font-medium">People of the Parish.</p>
+                            <p class="text-sm text-light-text italic">Damien Luis. RIP.</p>
+                        </div>
+                        <div class="border-b border-slate-100 pb-3">
+                            <p class="text-xs font-bold text-accent-gold uppercase mb-1">Sun 19 Oct</p>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-light-text text-xs w-8">09:00</span>
+                                    <span class="text-dark-text flex-1">Vincent Cadam. RIP.</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-light-text text-xs w-8">11:00</span>
+                                    <span class="text-dark-text flex-1">Teresa Bicette. RIP.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-b border-slate-100 pb-3">
+                            <p class="text-xs font-bold text-accent-gold uppercase mb-1">Mon 20 Oct</p>
+                            <p class="text-sm text-dark-text">Denzil Lang. Well-being.</p>
+                        </div>
+                         <div class="border-b border-slate-100 pb-3">
+                            <p class="text-xs font-bold text-accent-gold uppercase mb-1">Sat 25 Oct (Vigil)</p>
+                            <p class="text-sm text-dark-text">The People of the Parish.</p>
+                        </div>
+                        <div class="border-b border-slate-100 pb-3">
+                            <p class="text-xs font-bold text-accent-gold uppercase mb-1">Sun 26 Oct</p>
+                             <div class="space-y-1">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-light-text text-xs w-8">09:00</span>
+                                    <span class="text-dark-text flex-1">Ezord Letang. RIP.</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-light-text text-xs w-8">11:00</span>
+                                    <span class="text-dark-text flex-1">Veronica’s deceased relatives. RIP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-4 rounded-xl mt-2 border border-yellow-100">
+                        <h4 class="font-bold text-yellow-700 text-xs uppercase mb-2"><i class="fa-solid fa-hands-praying mr-1"></i> Prayer List</h4>
+                        <p class="text-yellow-800 text-xs leading-relaxed">
+                            John Oruche, Veronica Ojuri, Margaret, Chris, Loreen Phillips, Kathleen Phillips, Baby Simon Elliott, Clemence Sanderson, Kathleen Kavanagh, Mary Jane Ememe, Jay Agnes, Teresa & Patrick Moran., Carmel Brady, and Colin Agustine.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. FINANCE (Solid Dark Blue) -->
+            <div id="finance" class="bento-card col-span-1 bg-primary-blue text-white p-6 flex flex-col justify-between h-[310px] border-none shadow-lg">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-bold text-white/40 text-xs uppercase tracking-wider mb-1">Offertory 12th Oct</h3>
+                        <i class="fa-solid fa-sack-dollar text-white/20 text-2xl"></i>
+                    </div>
+                    <p class="font-serif text-4xl text-white mt-1">£981.20</p>
+                    <div class="mt-4 space-y-1 text-xs text-white/70">
+                         <div class="flex justify-between"><span>Envelopes</span><span>£282.33</span></div>
+                         <div class="flex justify-between"><span>Loose plate</span><span>£341.75</span></div>
+                         <div class="flex justify-between"><span>Standing order</span><span>£357.12</span></div>
+                    </div>
+                </div>
+                <div class="border-t border-white/20 pt-3 mt-2">
+                    <p class="text-[10px] text-accent-gold uppercase font-bold mb-1">Collections</p>
+                    <div class="text-[10px] text-white/60 space-y-0.5">
+                        <div class="flex justify-between"><span>Prisons Week</span><span>£6.60</span></div>
+                        <div class="flex justify-between"><span>CAFOD Harvest Day</span><span>£23.00</span></div>
+                        <div class="flex justify-between"><span>Other Collections</span><span>£15.25</span></div>
+                        <div class="flex justify-between font-bold text-white border-t border-white/20 mt-1 pt-1"><span>Total</span><span>£44.85</span></div>
+                    </div>
+                     <div class="border-t border-white/10 pt-2 mt-1 text-[10px] text-white/40 text-center">
+                        Counters' Rotas: St Mark (20/10), St Luke (27/10), St Matthew (03/11), St Mark (10/11), St Luke (17/11)
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. ALERT (Red Header) -->
+            <div class="bento-card col-span-1 h-[315px]">
+                <div class="p-4 bg-accent-red text-white flex items-center gap-2">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <h3 class="font-bold text-sm uppercase tracking-wide">Safety Warning</h3>
+                </div>
+                <div class="bg-white p-4 flex-grow overflow-y-auto custom-scroll">
+                    <h4 class="font-bold text-accent-red text-sm mb-2">WARNING TO PARENTS AND CHILDREN</h4>
+                    <p class="text-dark-text text-xs leading-relaxed text-justify">
+                        There has been a man handing out cash to children outside the local shops. The matter has been reported to police who are investigating. Please advise your children not to take any money and report any incidents to their parents and teachers, if they are approached by this man.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 5. PARISH NEWS (Muted Blue Header) -->
+            <div id="admin" class="bento-card col-span-1 md:col-span-2 lg:col-span-2 h-[600px]">
+                <div class="p-5 bg-secondary-blue text-white flex items-center gap-3">
+                    <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-bullhorn text-sm"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-2xl">Parish News</h3>
+                </div>
+                
+                <div class="p-6 bg-white overflow-y-auto custom-scroll h-[480px] pr-2 space-y-6 flex-grow">
+                    
+                    <!-- Sale of Church -->
+                    <div class="bg-slate-50 p-5 rounded-xl border-l-4 border-secondary-blue shadow-sm">
+                        <h4 class="font-bold text-secondary-blue text-lg mb-2">SALE OF ST NICHOLAS’ CHURCH</h4>
+                        <p class="text-sm text-dark-text leading-relaxed text-justify">
+                            As I am sure you are all aware we have been trying to sell St Nicholas’s church so we can pay off our debts and to carry out work to our church hall above the sacristy. However, the process has been very slow and we have made little progress on the sale. Though there have already been many meetings between parishioners and the previous priests and parish councils (all the parishioners unanimously agreeing to sell St Nicholas church asap), we held another Parish Council Meeting and a Finance Committee Meeting to discuss our options and have decided to put the sale of the church on the open market. Also, we wish to keep the house attached to the property to develop and turn it into two flats which will give the parish a much-needed boost to our income. All of this has been discussed before and has been agreed by the parishioners. We voted and unanimously agreed to put the church on the open market and to retain the house to develop into flats. If there are no objections from any parishioners, then we would like to put the proposals to the diocese for consideration. Fr Tony Grant.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                            <h4 class="font-bold text-dark-text text-sm mb-2 uppercase border-b border-slate-100 pb-1">Parish Council & Finance Committee Meeting</h4>
+                            <p class="text-sm text-light-text leading-relaxed">
+                                There will be a Parish Council & Finance Committee Meeting on Saturday 25th October after the 6 pm Vigil Mass in the presbytery. It is an important meeting, so please be there.
+                            </p>
+                        </div>
+                        <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                            <h4 class="font-bold text-dark-text text-sm mb-2 uppercase border-b border-slate-100 pb-1">Requiem Mass</h4>
+                            <p class="text-sm text-light-text leading-relaxed">
+                                REQUIEM MASS FOR KENNETH PETERS RIP FRIDAY 31ST OCTOBER AT 10 AM AT ST STEPHEN’S, FOLLOWED BY CREMATION AT CIY OF LONDON CEMETERY AT 12 NOON, NORTH CHAPEL CREMATORIUM.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                         <h4 class="font-bold text-dark-text text-sm mb-2 uppercase border-b border-slate-100 pb-1">Surgery</h4>
+                         <p class="text-sm text-light-text leading-relaxed">
+                            There will be a Surgery for any enquiries this Monday 20th October 5.30-6.30 pm in the Parish Office.
+                        </p>
+                    </div>
+
+                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                        <h4 class="font-bold text-primary-blue text-sm mb-1 uppercase">Right to Life & Euthanasia Bill</h4>
+                        <p class="text-sm text-dark-text">
+                            If you would like to voice your concerns over the new proposed Euthanasia Bill, you can contact your chosen House of Lords Members at: <a href="https://righttolife.org.uk/aspeersletter" class="text-secondary-blue hover:underline font-medium">https://righttolife.org.uk/aspeersletter</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. SACRAMENTS & YOUTH (Gold Header) -->
+            <div id="sacraments" class="bento-card col-span-1 md:col-span-1 lg:col-span-1 h-[600px]">
+                <div class="p-5 bg-accent-gold text-white flex gap-3">
+                    <i class="fa-solid fa-dove"></i>
+                    <h3 class="font-serif font-bold text-xl">Sacraments & Youth</h3>
+                </div>
+                
+                <div class="p-6 bg-white overflow-y-auto custom-scroll flex-grow space-y-6">
+                    <!-- FHC -->
+                    <div class="bg-yellow-50 p-4 rounded-xl border border-yellow-100">
+                        <h4 class="font-bold text-yellow-800 text-sm mb-2">INTRODUCTION TO FIRST HOLY COMMUNION & CONFIRMATION</h4>
+                        <p class="text-xs text-dark-text leading-relaxed">
+                            There is an Introduction to First Holy Communion and Confirmation in the parish Sacristy and church on 25th October. Fr Tony will speak to the parents of First Holy Communion at 11 am-12 pm, while FHC children are instructed. For Confirmation, parents and Candidates will receive Introduction from12.00-1.00pm.
+                        </p>
+                    </div>
+
+                    <!-- Altar Servers -->
+                    <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-dark-text text-sm mb-2">ALTAR SERVERS’ FORMATION CELEBRATION DAY</h4>
+                        <p class="text-xs text-light-text leading-relaxed">
+                            25th OCTOBER AT ST ANTONY’S CHURCH: There will be Altar Servers from all the deanery parishes who will meet at St Antony’s church on Saturday 25th October 9.30 am4.30 pm. It will be a day where altar servers will celebrate their ministry, make new friends, provide training, and celebrate Mass. If you are an altar server, try to be there. Those who are too young to make their own way there are asked to make sure their parents drop them off and pick them back up. If you are not an altar server but you feel called to be one, then you can also come along, as long as your parents agree and bring you to St Antony’s church and pick you up when it is finished. If parents wish to stay, they may do so.
+                        </p>
+                    </div>
+
+                     <!-- BCYS -->
+                     <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-dark-text text-sm mb-2">Brentwood Catholic Youth Service</h4>
+                        <p class="text-xs text-light-text leading-relaxed mb-2">
+                            <strong>Catechist Training & Resources Day 2025</strong>, Saturday 8th November 2025. Open to all confirmation and first holy communion catechists, youth leaders, and children’s liturgy coordinators in the Diocese of Brentwood. The day offers formation, practical workshops, inspiring speakers, and networking to support First Holy Communion and Confirmation programmes. Open to adults and young leaders (16+); full details and booking at www.bcys.net/events
+                        </p>
+                        <p class="text-xs text-light-text leading-relaxed">
+                            <strong>Youth Gather, 25th – 26th October</strong> Youth Gather is a weekend of faith, fun and friendship – with speakers, workshops, prayer and outdoor activities, meeting friends old and new, and all while sharing in and celebrating our Catholic faith. There will be coaches offering transport from around the Diocese included in the cost, as well as all meals, cabin accommodation and activities. This event is for year 9 and above. Apply now at www.bcys.net/events
+                        </p>
+                    </div>
+                    
+                    <!-- RCIA & Young Catechists -->
+                    <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-dark-text text-sm mb-2">RCIA</h4>
+                        <p class="text-xs text-light-text leading-relaxed mb-3">
+                            If anyone is interested or you know someone who is interested in the Catholic faith but they are not a Catholic, we are running an RCIA course (Rite of Christian Initiation of Adults) for those who would like to be received into the Church and become a Catholic. Anyone interested should contact the parish office by telephone or email or come to our Surgery on a Monday 5.30-6.30 pm at the parish office.
+                        </p>
+                        <h4 class="font-bold text-dark-text text-sm mb-2 border-t border-slate-100 pt-2">YOUNG CATECHISTS</h4>
+                         <p class="text-xs text-light-text leading-relaxed">
+                            We are looking for young people 16+ who would like to be catechists. Teaching our children catechism. You will be trained in catechism to help in First Holy Communion and Confirmation preparation. Please contact either Fr Tony or the parish office by email.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. COMMUNITY (Teal Header) -->
+            <div class="bento-card col-span-1 md:col-span-1 lg:col-span-1 h-[600px]">
+                <div class="p-5 bg-teal-header text-white flex gap-3">
+                    <i class="fa-solid fa-users"></i>
+                    <h3 class="font-serif font-bold text-xl">Community</h3>
+                </div>
+                
+                <div class="p-6 bg-white overflow-y-auto custom-scroll flex-grow space-y-6">
+                    <!-- Homeless -->
+                    <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-teal-header">
+                        <h4 class="font-bold text-dark-text text-sm mb-2">FOOD DISTRIBUTION TO THE HOMELESS</h4>
+                        <p class="text-xs text-light-text leading-relaxed">
+                             The Coptics at St Nicholas’ church distribute sandwiches and food to the homeless each Monday at Manor Park Library 8.15pm-10.00pm. They start at St Mary and St George Coptic Orthodox Church, aka St Nicholas church, 21 Gladding Road E12 5DD from 7:00-8:00pm for food preparation and distribute the food from 8:15-10:00pm in front of Manor Park Library. They give sandwiches, fruits, crisps, cupcakes, hot soup, and hot drinks. They also sometimes give clothes and some toiletries. If you would like to volunteer to help them or donate food, etc., then please contact us by telephone Fr Tony (0208- 478-1895) or by emailing Fr Tony at: manorpark@brcdt.org. Or contact Halim, the Copts’ secretary at: halim.salama@aon.co.uk. To find when you can help or deliver food to St Nicholas’ church.
+                        </p>
+                    </div>
+                    
+                    <!-- Mission Sunday -->
+                    <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-dark-text text-sm mb-2">SECOND COLLECTION FOR MISSION SUNDAY</h4>
+                        <p class="text-xs text-light-text leading-relaxed">
+                            This is an important collection for both the poor and Evangelisation.
+                        </p>
+                    </div>
+
+                    <!-- Mary's Meals -->
+                    <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-dark-text text-sm mb-2">MARY’S MEALS & FOREIGN CURRENCY & RECYCLED BOX</h4>
+                        <p class="text-xs text-light-text leading-relaxed">
+                            There are more envelopes at the back of the church to put your foreign notes and coins in. Also, there is a recycle box in the Repository for unwanted mobiles, iPads, jewellery, cameras, stamps, etc., which you can deposit in the box which will be given to Mary’s Meals who will convert this into cash for the feeding programme for school children who live in dire poverty.
+                        </p>
+                    </div>
+
+                    <!-- Interfaith -->
+                    <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-dark-text text-sm mb-2">INTERFAITH EVENTS</h4>
+                        <p class="text-xs text-light-text leading-relaxed mb-2">
+                            <strong>Brentwood Interfaith:</strong> To mark the 60th anniversary of ‘Nostra Aetate’, You are warmly invited to a talk entitled “God of All People” – an interfaith event celebrating dialogue, understanding, and unity among faith communities. This special gathering brings people of faiths together and how people of other faiths view the Catholic Church. Main Speaker: Fr. Adrian Graffy Date: Wednesday October 29th 7pm to 8.30 pm Venue: St. Edward’s Primary School Meeting Room, Green Street, Upton Park.
+                        </p>
+                        <p class="text-xs text-light-text leading-relaxed border-t border-slate-100 pt-2">
+                             <strong>Brentwood Diocese Interfaith:</strong> To mark the 60th anniversary of the Declaration of the Second Vatican Council ‘Nostra Aetate’, you are warmly invited to a talk entitled “God of All People” – an interfaith event celebrating dialogue, understanding, and unity among faith communities. Wednesday October 29 at 7pm – 8:30pm at St. Edward’s Primary School Meeting Room, Green Street, Upton Park London E13 9AX. There are limited parking spaces both at the Church and school car parks in Upton Park. The school is walking distance from Upton Park tube station. Kindly email your attendance by Friday 24th October to frbrittobelevendran@bcdt.org
+                        </p>
+                    </div>
+                    
+                    <!-- Contact Info Block -->
+                     <div class="bg-teal-50 border border-teal-200 p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-teal-header text-sm mb-2 uppercase">Parish Contact</h4>
+                        <p class="text-xs text-dark-text"><strong>Address:</strong> 146 Little Ilford Lane, Manor Park, London E12 5PJ.</p>
+                        <p class="text-xs text-dark-text"><strong>Tel:</strong> 020 8478 1895</p>
+                        <p class="text-xs text-dark-text"><strong>Email:</strong> manorpark@brcdt.org</p>
+                        <p class="text-xs text-dark-text"><strong>Web:</strong> www.ss-stephenandnicholas.org.uk</p>
+                        <p class="text-xs text-dark-text mt-1"><strong>Rev. Tony Grant</strong></p>
+                        <p class="text-xs text-dark-text">St. Winefride’s Primary School: 020 8478 0510</p>
+                        <p class="text-xs text-dark-text">Charity Number: 234092</p>
+                        <div class="flex gap-2 mt-2">
+                             <span class="text-xs text-teal-header">@manorparkRC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="animated_background.js"></script>
+    <script src="script.js?v=1.0"></script>
+</body>
+                </div>
+            </section>
+
+            <section id="sacraments-section">
+                <div class="max-width-container">
+                    <h2>The Sacraments</h2>
+                    <div class="sacraments-squares-container">
+                        <div class="sacrament-square">
+                            <p>Baptism</p>
+                            <img src="image/Logo1.png" alt="Logo1" class="sacrament-logo">
+                        </div>
+                        <div class="sacrament-square">
+                            <p>Confirmation</p>
+                            <img src="image/Logo1.png" alt="Logo1" class="sacrament-logo">
+                        </div>
+                        <div class="sacrament-square">
+                            <p>Eucharist</p>
+                            <img src="image/Logo1.png" alt="Logo1" class="sacrament-logo">
+                        </div>
+                        <div class="sacrament-square">
+                            <p>Reconciliation</p>
+                            <img src="image/Logo1.png" alt="Logo1" class="sacrament-logo">
+                        </div>
+                        <div class="sacrament-square">
+                            <p>Anointing of the Sick</p>
+                            <img src="image/Logo1.png" alt="Logo1" class="sacrament-logo">
+                        </div>
+                        <div class="sacrament-square">
+                            <p>Holy Orders</p>
+                            <img src="image/Logo1.png" alt="Logo1" class="sacrament-logo">
+                        </div>
+                        <div class="sacrament-square">
+                            <p>Matrimony</p>
+                            <img src="image/Logo1.png" alt="Logo1" class="sacrament-logo">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="animated_background.js"></script>
+    <script src="script.js?v=1.0"></script>
+</body>

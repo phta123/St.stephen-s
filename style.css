@@ -1,0 +1,385 @@
+/* General Styles */
+body {
+    margin: 0;
+    background-color: #ffffff;
+    color: black;
+    font-family: 'Ortica Linear', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Containers */
+.max-width-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main-content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Space between sections */
+    padding: 60px 0;
+}
+
+/* Header */
+#main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-logo {
+    height: 120px;
+}
+
+#main-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+#main-header nav ul li a {
+    font-family: 'Ronzino Bold', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px 15px;
+    border-radius: 15px;
+    mix-blend-mode: screen;
+    color: black;
+    transition: background-color 0.3s;
+}
+
+#main-header nav ul li a:hover {
+    background-color: white;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content-sticky {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero-background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#centered-text {
+    text-align: center;
+}
+
+#centered-text .st, #centered-text .stephens, #centered-text .parish {
+    font-family: 'Ortica Linear', sans-serif;
+    font-weight: 900;
+    color: #ffb703;
+    margin: 0;
+    line-height: 1;
+    font-size: 7em;
+    text-shadow: 0 0 1px #ffb703, 0 0 2px #ffb703, 0 0 3px #ffb703;
+}
+
+#location-box {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 5px 15px;
+}
+
+.location-text {
+    color: black;
+    font-family: 'Ortica Linear', sans-serif;
+    font-size: 1.2em;
+}
+
+
+/* Welcome Section */
+#welcome-section {
+    padding: 60px 0;
+}
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    align-items: center;
+}
+
+.welcome-text-container {
+    grid-column: 1 / -1; /* Span full width on small screens */
+    grid-row: 1;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.welcome-parish {
+    font-size: 6em;
+    font-family: 'Ortica Linear', sans-serif;
+    line-height: 0.8;
+    font-weight: bold;
+    color: black;
+}
+
+.to-our {
+    font-size: 2.5em;
+    font-family: 'Ortica Linear', sans-serif;
+    line-height: 0.8;
+    color: black;
+}
+
+.welcome-subtext {
+    font-size: 1.2em;
+    text-align: justify;
+    margin-top: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.welcome-photo-placeholder {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+
+/* Mass Times Section */
+#mass-times-section {
+    padding: 60px 0;
+}
+
+.rectangles-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.expandable-rectangle {
+    flex-basis: 150px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 500px;
+    border-radius: 15px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: flex-basis 0.8s ease;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.expandable-rectangle.closed {
+    background-color: #8F3F3C;
+}
+
+.expandable-rectangle.closed .rect-image,
+.expandable-rectangle.closed .text-beside-image,
+.expandable-rectangle.closed .live-stream-button,
+.expandable-rectangle.closed .map-link {
+    display: none;
+}
+
+.expandable-rectangle.open {
+    flex-basis: 600px;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: white;
+    font-family: 'Ortica Linear', sans-serif;
+    font-size: 2em;
+    text-align: center;
+}
+
+.expandable-rectangle.open .vertical-text {
+    display: none;
+}
+
+.closed-logo {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80px;
+    width: auto;
+}
+
+.expandable-rectangle.open .closed-logo {
+    display: none;
+}
+
+.rect-image {
+    height: 100%;
+    width: 250px;
+    object-fit: cover;
+}
+
+#mass-rectangle { background: #ffb703; }
+#confession-rectangle { background: #456993; }
+#adoration-rectangle { background: #e3806a; }
+
+.text-beside-image {
+    padding: 20px;
+    color: white;
+    font-family: 'Ortica Linear', sans-serif;
+}
+
+.text-beside-image p strong {
+    font-size: 1.5em;
+}
+
+.mass-time-entry {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Eucharist Verse */
+#eucharist-verse {
+    margin: 40px auto 0;
+    font-family: 'Ortica Linear', sans-serif;
+    font-size: 1.1em;
+    color: black;
+    max-width: 600px;
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.verse-reference-box {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 6px;
+    display: inline-block;
+}
+
+/* Newsletter Section */
+#newsletter-section {
+    padding: 60px 0;
+    background-color: #f0f2f5;
+}
+
+/* Sacraments Section */
+#sacraments-section {
+    padding: 60px 0;
+}
+
+#sacraments-section h2 {
+    font-size: 3em;
+    font-family: 'Ortica Linear', sans-serif;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.sacraments-squares-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.sacrament-square {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Ortica Linear', sans-serif;
+}
+
+.sacrament-logo {
+    position: absolute;
+    bottom: 15px;
+    height: 60px;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sacrament-square:nth-child(1) { background-color: #ffb703; }
+.sacrament-square:nth-child(2) { background-color: #456993; }
+.sacrament-square:nth-child(3) { background-color: #e3806a; }
+.sacrament-square:nth-child(4) { background-color: #0b66b2; }
+.sacrament-square:nth-child(5) { background-color: #e8a900; }
+.sacrament-square:nth-child(6) { background-color: #cc503e; }
+.sacrament-square:nth-child(7) { background-color: #0d9488; }
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    #main-header nav { display: none; } /* Basic mobile nav hiding */
+    .welcome-grid { grid-template-columns: 1fr 1fr; }
+    .welcome-text-container { margin-bottom: 20px; }
+}
+
+@media (max-width: 768px) {
+    #centered-text .st, #centered-text .stephens, #centered-text .parish { font-size: 5em; }
+    .welcome-grid { grid-template-columns: 1fr; }
+    .rectangles-container { flex-direction: column; height: auto; }
+    .expandable-rectangle { flex-basis: 100px; height: 100px; width: 100%; }
+    .expandable-rectangle.open { height: auto; flex-basis: auto; }
+    .rect-image { display: none; } /* Hide on mobile for vertical layout */
+    .sacraments-squares-container { flex-direction: column; align-items: center; }
+}
