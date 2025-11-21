@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Stephen's Parish | Manor Park</title>
+    <link rel="stylesheet" href="style.css?v=5.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="backgroundCanvas"></canvas>
+    
+    <nav id="glass-nav">
+        <div class="nav-logo">
+            <img src="image/Logo1.png" alt="St. Stephen Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#mass-times-section">Mass Times</a></li>
+            <li><a href="#newsletter-section">Newsletter</a></li>
+            <li><a href="#sacraments-section">Sacraments</a></li>
+            <li><a href="#community">Contact</a></li>
+        </ul>
+        <a href="https://www.dioceseofbrentwood.net/donations/?parish=manor-park" class="donate-btn">Donate</a>
+    </nav>
+
+    <div class="container">
+        <section id="hero">
+            <div class="hero-content-sticky">
+                <video id="hero-background-video" muted autoplay loop playsinline>
+                    <source src="video/scene.webm" type="video/webm">
+                    <source src="video/scene.mp4" type="video/mp4">
+                </video>
+                
+                <div class="video-overlay"></div>
+
+                <div id="hero-main-text">
+                    <p class="pre-title">Welcome to</p>
+                    <h1 class="st-stephens-title">
+                        <span class="line-1">St. Stephen's</span>
+                        <span class="line-2">Parish</span>
+                    </h1>
+                    <div class="location-pill">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Manor Park, London</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="content">
+            
+            <div class="glass-panel welcome-panel">
+                <div class="welcome-content">
+                    <h2 class="editorial-heading">Welcome to your local <span class="italic">Roman Catholic Parish</span></h2>
+                    <p class="editorial-body">
+                        A community in eternal unity with the Holy Trinity, come and participate.
+                    </p>
+                </div>
+            </div>
+
+            <div id="mass-times-section" class="rectangles-container">
+                <div id="mass-rectangle" class="expandable-rectangle open travel-card">
+                    <div class="vertical-text mass-times-text">Mass Times</div>
+                    <div class="card-bg-image" style="background-image: url('image/Mass.jpg');"></div>
+                    <div class="glass-overlay"></div>
+                    <div class="card-content">
+                        <h3>Weekly Liturgy</h3>
+                        <div class="schedule-grid">
+                            <div class="schedule-col">
+                                <h4>Weekdays</h4>
+                                <p>09:15 AM</p>
+                            </div>
+                            <div class="schedule-col">
+                                <h4>Saturday Vigil</h4>
+                                <p>06:00 PM</p>
+                            </div>
+                            <div class="schedule-col highlight">
+                                <h4>Sunday</h4>
+                                <p>09:00 & 11:00</p>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                             <a href="https://share.google/8fvvOZnT10sjER1b3" target="_blank" class="action-btn map-btn"><i class="fa-solid fa-map"></i> Directions</a>
+                             <button class="action-btn live-btn"><i class="fa-solid fa-circle-play"></i> Livestream</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="confession-rectangle" class="expandable-rectangle closed travel-card">
+                    <div class="vertical-text confession-text">Confession</div>
+                    <div class="card-bg-image" style="background-image: url('image/confession.jpeg');"></div>
+                    <div class="glass-overlay"></div>
+                    <div class="card-content">
+                        <h3>Reconciliation</h3>
+                        <p class="sub-text">"Whose sins you forgive are forgiven them"</p>
+                        <div class="schedule-list">
+                            <p><strong>Friday:</strong> After 9:15 AM Mass</p>
+                            <p><strong>Saturday:</strong> 5:00 PM - 5:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="adoration-rectangle" class="expandable-rectangle closed travel-card">
+                    <div class="vertical-text adoration-text">Eucharistic Adoration</div>
+                    <div class="card-bg-image" style="background-image: url('image/eucharistic.jpg');"></div>
+                    <div class="glass-overlay"></div>
+                    <div class="card-content">
+                        <h3>Holy Hour</h3>
+                        <p class="sub-text">Silent prayer before the Blessed Sacrament</p>
+                         <div class="schedule-list">
+                            <p><strong>Friday:</strong> After 9:15 AM Mass</p>
+                            <p><strong>Saturday:</strong> 5:00 PM - 5:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="eucharist-verse" class="glass-verse"></div>
+        </section>
+
+        <section id="newsletter-section">
+            <div class="glass-panel newsletter-container">
+                <div class="newsletter-header-modern">
+                    <div class="header-content">
+                        <span class="tag-pill">Weekly Edition</span>
+                        <h2 class="newsletter-title">Parish <span class="italic">Life</span> & Liturgy</h2>
+                        <p class="newsletter-subtitle">St. Stephen’s Church • Manor Park</p>
+                    </div>
+                    <div class="date-display">
+                        <span class="month">OCT</span>
+                        <span class="day">19</span>
+                    </div>
+                </div>
+
+                <div class="glass-grid">
+                    <div class="glass-card mass-schedule">
+                        <div class="card-header">
+                            <i class="fa-solid fa-clock"></i>
+                            <h3>Holy Mass</h3>
+                        </div>
+                        <div class="scroll-content custom-scroll">
+                            <div class="schedule-row highlight-row">
+                                <div class="day-badge">SUN</div>
+                                <div class="times">
+                                    <span>09:00 AM</span>
+                                    <span>11:00 AM</span>
+                                </div>
+                            </div>
+                            <div class="schedule-row">
+                                <div class="day-badge">SAT</div>
+                                <div class="times"><span>06:00 PM (Vigil)</span></div>
+                            </div>
+                            <div class="divider"><span>Weekdays</span></div>
+                            <div class="schedule-row"><div class="day-name">Mon</div><div class="time">09:15 AM</div></div>
+                            <div class="schedule-row"><div class="day-name">Tue</div><div class="time">09:15 AM</div></div>
+                            <div class="schedule-row mute"><div class="day-name">Wed</div><div class="time">No Mass</div></div>
+                            <div class="schedule-row"><div class="day-name">Thu</div><div class="time">09:15 AM</div></div>
+                            <div class="schedule-row adoration-row"><div class="day-name">Fri</div><div class="time">09:15 AM + Adoration</div></div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card alert-box">
+                        <div class="icon-box alert"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <div class="alert-content">
+                            <h4>Safety Notice</h4>
+                            <p>Please be aware of a man handing out cash to children near local shops. Police have been notified.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card intentions">
+                        <div class="card-header">
+                            <i class="fa-solid fa-hands-praying"></i>
+                            <h3>Intentions</h3>
+                        </div>
+                        <div class="scroll-content custom-scroll">
+                            <div class="intention-item">
+                                <span class="date">Sat 18 (Vigil)</span>
+                                <p>People of the Parish</p>
+                                <p class="deceased">Damien Luis RIP</p>
+                            </div>
+                            <div class="intention-item">
+                                <span class="date">Sun 19</span>
+                                <p>09:00 - Vincent Cadam RIP</p>
+                                <p>11:00 - Teresa Bicette RIP</p>
+                            </div>
+                            <div class="intention-item">
+                                <span class="date">Mon 20</span>
+                                <p>Denzil Lang (Well-being)</p>
+                            </div>
+                            <div class="intention-item">
+                                <span class="date">Sun 26</span>
+                                <p>Ezord Letang RIP</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card finance">
+                        <div class="card-header-simple">
+                            <span>Offertory</span>
+                            <i class="fa-solid fa-sack-dollar"></i>
+                        </div>
+                        <div class="finance-amount">£981.20</div>
+                        <div class="finance-breakdown">
+                            <div class="row"><span>Envelopes</span> <span>£282.33</span></div>
+                            <div class="row"><span>Loose</span> <span>£341.75</span></div>
+                            <div class="row"><span>Standing Order</span> <span>£357.12</span></div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card news-feature">
+                        <div class="card-header">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <h3>Parish News</h3>
+                        </div>
+                        <div class="scroll-content custom-scroll">
+                            <article class="news-snippet">
+                                <h4>Sale of St. Nicholas Church</h4>
+                                <p>The process has been slow, but we have decided to put the church on the open market while retaining the house to develop into flats.</p>
+                            </article>
+                            <article class="news-snippet">
+                                <h4>Parish Council Meeting</h4>
+                                <p><strong>Sat 25th Oct:</strong> Important meeting after the 6pm Vigil Mass in the presbytery.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="glass-card sacraments">
+                        <div class="card-header">
+                            <i class="fa-solid fa-dove"></i>
+                            <h3>Sacraments</h3>
+                        </div>
+                        <div class="scroll-content custom-scroll">
+                            <div class="event-item">
+                                <span class="date-tag">25 OCT</span>
+                                <h4>First Holy Communion</h4>
+                                <p>Introduction for parents and children at 11:00 AM.</p>
+                            </div>
+                            <div class="event-item">
+                                <span class="date-tag">08 NOV</span>
+                                <h4>Catechist Training</h4>
+                                <p>Brentwood Catholic Youth Service training day.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sacraments-section">
+            <div class="glass-panel sacraments-panel">
+                <h2 class="editorial-heading text-center">The Seven <span class="italic">Sacraments</span></h2>
+                <div class="sacraments-squares-container">
+                    <div class="sacrament-square" data-id="baptism">
+                        <p>Baptism</p>
+                        <img src="image/Logo1.png" class="sacrament-logo">
+                    </div>
+                    <div class="sacrament-square" data-id="confirmation">
+                        <p>Confirmation</p>
+                        <img src="image/Logo1.png" class="sacrament-logo">
+                    </div>
+                    <div class="sacrament-square" data-id="eucharist">
+                        <p>Eucharist</p>
+                        <img src="image/Logo1.png" class="sacrament-logo">
+                    </div>
+                    <div class="sacrament-square" data-id="penance">
+                        <p>Reconciliation</p>
+                        <img src="image/Logo1.png" class="sacrament-logo">
+                    </div>
+                    <div class="sacrament-square" data-id="anointing">
+                        <p>Anointing</p>
+                        <img src="image/Logo1.png" class="sacrament-logo">
+                    </div>
+                    <div class="sacrament-square" data-id="holy-orders">
+                        <p>Holy Orders</p>
+                        <img src="image/Logo1.png" class="sacrament-logo">
+                    </div>
+                    <div class="sacrament-square" data-id="matrimony">
+                        <p>Matrimony</p>
+                        <img src="image/Logo1.png" class="sacrament-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="sacrament-modal-overlay" class="modal-overlay hidden">
+            <div class="modal-glass-card">
+                <button id="close-modal-btn"><i class="fa-solid fa-times"></i></button>
+                <div class="modal-header-inline">
+                    <h2 id="modal-title">Sacrament Title</h2>
+                </div>
+                <div class="modal-content custom-scroll" id="modal-body">
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="animated_background.js"></script>
+    <script src="script.js?v=5.0"></script>
+</body>
+</html>
